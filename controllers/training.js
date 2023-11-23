@@ -1,6 +1,8 @@
 // @desc   Get all trainings
 // @route  GET /api/trainings
 // @access Public
+const Training = require('../models/Training')
+
 exports.getTrainings = (req, res, next) => {
     res.status(200).json({ success: true, msg: "Show all trainings", hello: req.hello });
 };
@@ -14,6 +16,7 @@ exports.getTraining = (req, res, next) => {
     // @route  POST /api/trainings
     // @access Private
 exports.createTraining = (req, res, next) => {
+    console.log(req.body)
     res.status(200).json({ success: true, msg: "Create new training" });
 };
     // @desc   Update training
@@ -28,4 +31,4 @@ exports.updateTraining = (req, res, next) => {
 exports.deleteTraining = (req, res, next) => {
     res.status(200).json({ success: true, msg: `Delete training ${req.params.id}` });
 };
-    
+
